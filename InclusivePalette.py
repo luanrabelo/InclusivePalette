@@ -66,17 +66,18 @@ for i in range(15):
 
 # %%
 ColorsMap = [ColorsForColorBlind(i) for i in range(15)]
+print(ColorsMap)
 fig, ax = plt.subplots(figsize=(25, 10))
 for i, c in enumerate(ColorsMap):
-    ax.bar(i, 1, color=c)
+    ax.bar(i, 1, color=c, label=c)
 ax.yaxis.set_visible(False)
-ax.xaxis.set_visible(False)
+ax.set_xticklabels(ColorsMap)
 ax.spines['top'].set_visible(False)
 ax.spines['right'].set_visible(False)
 ax.spines['bottom'].set_visible(False)
 ax.spines['left'].set_visible(False)
-ax.set_title('Colors for Color Blind - Developed by: Luan Rabelo', fontsize=25, fontweight='bold', color='#16213E', y=1.02)
+ax.set_title('InclusivePalette - Developed by: Luan Rabelo', fontsize=25, fontweight='bold', color='#16213E', y=1.02)
 plt.show()
-fig.savefig('ColorsForColorBlind.png', dpi=600, bbox_inches='tight')
+fig.savefig('InclusivePalette.png', dpi=600, bbox_inches='tight')
 
 
